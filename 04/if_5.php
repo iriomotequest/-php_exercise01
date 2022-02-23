@@ -1,11 +1,17 @@
 <?php
 
-$num = 3434;
+$num = 19;
 
-if ($num == 1 || $num % 2 == 0 || $num % 3 == 0 || $num % 5 == 0 || $num % 7 == 0) {
+if ($num == 1) {
     echo "{$num}は素数ではありません";
-} elseif ($num % 2 == 0 || $num % 3 == 0 || $num % 5 == 0 || $num % 7 == 0 && $num > 10 || $num % $num == 0) {
-    echo "{$num}は素数です";
-} else {
-    echo "{$num}は素数です";
+    return 0;
 }
+
+for ($i = 2; $i < $num; $i++) {
+    if ($num % $i == 0) {
+        echo "{$num}は素数ではありません";
+        return 0;
+    }
+}
+
+echo "{$num}は素数です";
