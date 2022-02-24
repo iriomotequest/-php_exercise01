@@ -9,4 +9,7 @@ do {
     残り残金は{$poket_money}です。<br>";
     $poket_money -= $fund_raising;
 } while ($poket_money > 0);
-echo 'あなたはこれ以上募金できません';
+if ($poket_money < 0) {
+    echo 'あなたはこれ以上募金できません';
+    return 0;
+}
