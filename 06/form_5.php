@@ -6,7 +6,8 @@ $num3 = '';
 $total = '';
 $err_msg = '全てに数字を入力してください';
 
-function h($str) {
+function h($str)
+{
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
 
@@ -14,11 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $num1 = $_POST['num1'];
     $num2 = $_POST['num2'];
     $num3 = $_POST['num3'];
-if (empty($num1) or empty($num2) or empty($num3)) {
-    $err_msg = '全てに数字を入力してください';
-} else {
-    $total = $_POST['num1'] + $_POST['num2'] + $_POST['num3'];
-}
+    if (empty($num1) or empty($num2) or empty($num3)) {
+        $err_msg = '全てに数字を入力してください';
+    } else {
+        $total = $_POST['num1'] + $_POST['num2'] + $_POST['num3'];
+    }
     $total = h($total);
 }
 ?>
@@ -35,9 +36,9 @@ if (empty($num1) or empty($num2) or empty($num3)) {
 
 <body>
     <h1>数字を入力してください</h1>
-    <?php if (empty($num1) or empty($num2) or empty($num3)): ?>
+    <?php if ($err_msg) : ?>
         <ul>
-            <li><?=$err_msg?></li>
+            <li><?= $err_msg ?></li>
         </ul>
     <?php endif; ?>
 
@@ -59,7 +60,9 @@ if (empty($num1) or empty($num2) or empty($num3)) {
         </div>
 
         <?php
-        if ($num1 && $num2 && $num3) { echo "合計値は {$total} です。";}
+        if ($num1 && $num2 && $num3) {
+            echo "合計値は {$total} です。";
+        }
         ?>
     </form>
 </body>

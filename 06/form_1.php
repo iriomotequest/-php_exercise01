@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $err_msg = '年齢を入力して下さい';
     }
 }
-$age = htmlspecialchars($age,ENT_QUOTES,'UTF-8');
+$age = htmlspecialchars($age, ENT_QUOTES, 'UTF-8');
 ?>
 
 <!DOCTYPE html>
@@ -24,18 +24,21 @@ $age = htmlspecialchars($age,ENT_QUOTES,'UTF-8');
 
 <body>
     <h1>PHPメソッド</h1>
-        <p><?= $err_msg ?></p>
+    <p><?= $err_msg ?></p>
     <form action="" method="post">
         <div>
             <label for="age">年齢</label>
-            <input type="number" name="age" value="<?= $age ?>">
+            <input type="number" name="age" id="age" value="<?= $age ?>">
         </div>
         <div class="submit">
             <input type="submit" value="送信">
         </div>
-    <p><?php
-        if ($age) {echo "私は{$age} 歳です。";}
-    ?></p>
+        <p><?php
+            if ($age) {
+                echo "私は{$age} 歳です。";
+            }
+            ?></p>
     </form>
 </body>
+
 </html>

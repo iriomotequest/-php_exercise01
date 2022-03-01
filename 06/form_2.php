@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +11,8 @@
 <body>
     <form action="form_2_post.php" method="post">
         <div>
-        <laval for="name">名前</laval>
-        <input type="text" name="name">
+            <laval for="name">名前</laval>
+            <input type="text" name="name">
         </div>
         <input type="submit" value="送信">
     </form>
