@@ -17,10 +17,7 @@ $today_meal = [
     'パスタ' => 400
 ];
 
-
 $total_meals = array_merge($yesterday_meal,$today_meal);
 // 標準関数を使用して、配列を結合($yesterday_mealと$today_meal)
 
 echo calc_cal($total_meals);
-
-?>

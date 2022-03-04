@@ -11,7 +11,7 @@ function get_greeting($time_zone)
         '夜' => 'こんばんは'
     ];
 
-    return $time_zone.'のあいさつ'.$greetings[$time_zone];
+    return $time_zone . 'のあいさつ' . $greetings[$time_zone];
 }
 
 echo get_greeting($time_zone);
