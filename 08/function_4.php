@@ -4,7 +4,7 @@ function check_temperature($body_temperature)
 {
     if ($body_temperature < 37) {
         return true;
-    } elseif ($body_temperature >= 37) {
+    } else {
         return false;
     }
     // 37度未満の場合はtrue
